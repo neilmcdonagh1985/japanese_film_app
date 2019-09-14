@@ -1,5 +1,8 @@
 <template lang='html'>
+  <div>
   <li>{{film.title}}</li>
+  <button>add to watched list</button>
+  </div>
   
 </template>
 
