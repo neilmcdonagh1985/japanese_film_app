@@ -28,35 +28,34 @@ export default {
       filmsToWatchLater: []
     };
   },
-  // methods: {
-  //   markTowatchLater: function(film){
-  //     filmsToWatchLater.push(film)
-  //   }
-  // },
+  methods: {
+    markToWatch: function(film){
+      const idsOfWatchLaterList = (this.filmsToWatchLater.map(film => film.id))
+      if (!this.isOnWatchLaterList(film)) this.filmsToWatchLater.push(film)
+    },
+    isOnWatchLaterList: function(film){
+      const idsOfWatchLaterList = (this.filmsToWatchLater.map(film => film.id))
+      return idsOfWatchLaterList.includes(film.id)
+    }
+  },
   mounted(){
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(res => res.json())
-    .then(films => this.films = films)
+    .then(films => this.films = films),
 
-    eventBus.$on('film-selected', (film) => {
-      this.selectedFilm = film
-    }),
-    eventBus.$on('film-to-watch-later', (film) => {
-      this.selectedFilm = film
-      this.filmsToWatchLater.push(this.selectedFilm)
-    })
-    },
-
+    eventBus.$on('film-selected', film => this.selectedFilm(film));
+    eventBus.$on('film-to-watch-later', film => this.markToWatch(film));
+  },
   components: {
-    'film-list': FilmList,
-    'film-detail': FilmDetail,
-    'film-item': FilmItem,
-    'films-to-watch-later': FilmsToWatchLater
+    "film-list": FilmList,
+    "film-detail": FilmDetail,
+    "film-item": FilmItem,
+    "films-to-watch-later": FilmsToWatchLater
+  },
   }
 
-}
 </script>
 
-<style>
+<style lang='css' scoped>
 
 </style>

@@ -2,7 +2,7 @@
   <div>
   <li>{{film.title}}</li>
   <button v-on:click='displayInfo'>Details</button>
-  <button v-on:click='addToWatchLater'>add to watch later</button>
+  <button v-if='' v-on:click='addToWatchLater'>add to watch later</button>
   </div>
   
 </template>
@@ -18,6 +18,7 @@ export default {
             eventBus.$emit('film-selected', this.film);
         },
         addToWatchLater: function(){
+            // IsOnWatchLaterList(this.film);
             eventBus.$emit('film-to-watch-later', this.film);
 
         }
