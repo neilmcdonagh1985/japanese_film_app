@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Film App</h1>
+    <div>
+      <film-list :films='films'></film-list>
+    </div>
   </div>
   
 </template>
@@ -9,7 +12,7 @@
 
 import FilmList from './components/FilmList.vue';
 // import FilmItem from './components/FilmItem.vue';
-import FilmDetail from './components/FilmDetail.vue';
+// import FilmDetail from './components/FilmDetail.vue';
 import { eventBus } from './main.js';
 
 
@@ -31,6 +34,10 @@ export default {
     // })
 
 
+  },
+  components: {
+    'film-list': FilmList,
+    // 'film-detail': FilmDetail
   }
 
 }
