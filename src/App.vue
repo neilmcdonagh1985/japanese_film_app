@@ -5,6 +5,7 @@
       <film-detail :film='selectedFilm'></film-detail>
       <film-list :films='films'></film-list>
     </div>
+    <films-to-watch-later :filmsToWatchLater='filmsToWatchLater'></films-to-watch-later>
   </div>
   
 </template>
@@ -14,6 +15,7 @@
 import FilmList from './components/FilmList.vue';
 import FilmItem from './components/FilmItem.vue';
 import FilmDetail from './components/FilmDetail.vue';
+import FilmsToWatchLater from './components/FilmsToWatchLater.vue'
 import { eventBus } from './main.js';
 
 
@@ -27,8 +29,8 @@ export default {
     };
   },
   // methods: {
-  //   markTowatchLater: function(beer){
-  //     filmsToWatchLater.push(beer)
+  //   markTowatchLater: function(film){
+  //     filmsToWatchLater.push(film)
   //   }
   // },
   mounted(){
@@ -48,7 +50,8 @@ export default {
   components: {
     'film-list': FilmList,
     'film-detail': FilmDetail,
-    'film-item': FilmItem
+    'film-item': FilmItem,
+    'films-to-watch-later': FilmsToWatchLater
   }
 
 }
