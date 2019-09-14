@@ -14,9 +14,7 @@ export default {
     props: ['film'],
     methods: {
         displayInfo(){
-            console.log(`you have clicked on ${this.film.description}`);
-            
-            // eventBus.emit('film-selected', this.film)
+            eventBus.$emit('film-selected', this.film)
         }
     }
 
