@@ -1,7 +1,8 @@
 <template lang='html'>
   <div>
   <li>{{film.title}}</li>
-  <button v-on:click='displayInfo'>add to watched list</button>
+  <button v-on:click='displayInfo'>Details</button>
+  <button v-on:click='addToWatchLater'>add to watch later</button>
   </div>
   
 </template>
@@ -13,8 +14,12 @@ export default {
     name: 'film-item',
     props: ['film'],
     methods: {
-        displayInfo(){
-            eventBus.$emit('film-selected', this.film)
+        displayInfo: function(){
+            eventBus.$emit('film-selected', this.film);
+        },
+        addToWatchLater: function(){
+            eventBus.$emit('film-to-watch-later', this.film);
+
         }
     }
 

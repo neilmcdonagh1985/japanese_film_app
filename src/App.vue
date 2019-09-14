@@ -12,7 +12,7 @@
 <script>
 
 import FilmList from './components/FilmList.vue';
-// import FilmItem from './components/FilmItem.vue';
+import FilmItem from './components/FilmItem.vue';
 import FilmDetail from './components/FilmDetail.vue';
 import { eventBus } from './main.js';
 
@@ -22,9 +22,15 @@ export default {
   data(){
     return {
       films: [],
-      selectedFilm: null
+      selectedFilm: null,
+      filmsToWatchLater: []
     };
   },
+  // methods: {
+  //   markTowatchLater: function(beer){
+  //     filmsToWatchLater.push(beer)
+  //   }
+  // },
   mounted(){
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(res => res.json())
@@ -32,13 +38,17 @@ export default {
 
     eventBus.$on('film-selected', (film) => {
       this.selectedFilm = film
+    }),
+    eventBus.$on('film-to-watch-later', (film) => {
+      this.selectedFilm = film
+      this.filmsToWatchLater.push(this.selectedFilm)
     })
+    },
 
-
-  },
   components: {
     'film-list': FilmList,
-    'film-detail': FilmDetail
+    'film-detail': FilmDetail,
+    'film-item': FilmItem
   }
 
 }
