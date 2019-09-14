@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="app">
     <h1>Film App</h1>
-    <div>
+    <div id="list-info">
       <film-detail :film='selectedFilm'></film-detail>
       <film-list :films='films'></film-list>
     </div>
@@ -43,7 +43,7 @@ export default {
     .then(res => res.json())
     .then(films => this.films = films),
 
-    eventBus.$on('film-selected', film => this.selectedFilm(film));
+    eventBus.$on('film-selected', film => this.selectedFilm = film);
     eventBus.$on('film-to-watch-later', film => this.markToWatch(film));
   },
   components: {
