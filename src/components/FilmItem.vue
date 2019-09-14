@@ -1,7 +1,7 @@
 <template lang='html'>
   <div>
   <li>{{film.title}}</li>
-  <button>add to watched list</button>
+  <button v-on:click='displayInfo'>add to watched list</button>
   </div>
   
 </template>
@@ -13,8 +13,10 @@ export default {
     name: 'film-item',
     props: ['film'],
     methods: {
-        handleClick(){
-            eventBus.emit('film-selected', this.film)
+        displayInfo(){
+            console.log(`you have clicked on ${this.film.description}`);
+            
+            // eventBus.emit('film-selected', this.film)
         }
     }
 
