@@ -2,9 +2,9 @@
   <div id="app">
     <h1>Film App</h1>
     <div id="list-info">
-      <film-list :films='films'></film-list>
+      <film-list :films='films' :favourites='favourites'></film-list>
       <film-detail :film='selectedFilm'></film-detail>
-          <films-to-watch-later :filmsToWatchLater='filmsToWatchLater'></films-to-watch-later>
+      <films-to-watch-later :filmsToWatchLater='filmsToWatchLater'></films-to-watch-later>
     </div>
   </div>
   
@@ -25,7 +25,8 @@ export default {
     return {
       films: [],
       selectedFilm: null,
-      filmsToWatchLater: []
+      filmsToWatchLater: [],
+      favourites: []
     };
   },
   methods: {
@@ -50,6 +51,7 @@ export default {
     eventBus.$on('film-selected', film => this.selectedFilm = film);
     eventBus.$on('film-to-watch-later', film => this.markToWatch(film));
     eventBus.$on('item-removed', film => this.unmarkToWatch(film));
+    eventBus.$on('favourite-selected', film => this.favourites.push(film));
   },
   components: {
     "film-list": FilmList,

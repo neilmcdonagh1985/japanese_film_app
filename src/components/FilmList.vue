@@ -1,7 +1,7 @@
 <template lang='html'>
   <div id="film-list">
     <ul style="list-style: none;">
-      <film-item v-for='film in films' :film='film' :key='film.id'></film-item>
+      <film-item v-for='film in films' :film='film' :favourites='favourites' :key='film.id'></film-item>
     </ul>
 
   </div>
@@ -15,7 +15,7 @@ import FilmItem from './FilmItem'
 
 export default {
     name: 'film-list',
-    props: ['films'],
+    props: ['films', 'favourites'],
     components: {
         'film-item': FilmItem
     }
