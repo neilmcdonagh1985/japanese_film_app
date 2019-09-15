@@ -1,5 +1,5 @@
 <template lang='html'>
-  <div>
+  <div id="film-list">
     <ul>
       <film-item v-for='(film, index) in films' :film='film' :key='index'></film-item>
     </ul>

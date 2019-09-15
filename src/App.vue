@@ -2,10 +2,11 @@
   <div id="app">
     <h1>Film App</h1>
     <div id="list-info">
-      <film-detail :film='selectedFilm'></film-detail>
       <film-list :films='films'></film-list>
+      <film-detail :film='selectedFilm'></film-detail>
+          <films-to-watch-later :filmsToWatchLater='filmsToWatchLater'></films-to-watch-later>
     </div>
-    <films-to-watch-later :filmsToWatchLater='filmsToWatchLater'></films-to-watch-later>
+    <!-- <films-to-watch-later :filmsToWatchLater='filmsToWatchLater'></films-to-watch-later> -->
   </div>
   
 </template>
@@ -57,5 +58,14 @@ export default {
 </script>
 
 <style lang='css' scoped>
+
+h1 {
+  justify-content: center;
+  display: flex;
+}
+
+ #list-info {
+  display: flex;
+} 
 
 </style>

@@ -1,5 +1,5 @@
 <template lang='html'>
-  <div>
+  <div id="film-item">
   <li>{{film.title}}</li>
   <button v-on:click='displayInfo'>Details</button>
   <button v-if='' v-on:click='addToWatchLater'>add to watch later</button>
