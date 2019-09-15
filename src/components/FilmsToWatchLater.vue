@@ -1,9 +1,9 @@
 <template lang='html'>
   <div id="watch-later-list">
-    <ul>
-      <watch-later-listitem v-for='(filmToWatchLater, index) in filmsToWatchLater' 
+    <ul style="list-style: none;">
+      <watch-later-listitem v-for='filmToWatchLater in filmsToWatchLater' 
         :filmToWatchLater='filmToWatchLater'
-        :key='index'
+        :key='filmToWatchLater.id'
         ></watch-later-listitem>
     </ul>
   </div>  
@@ -24,5 +24,9 @@ export default {
 </script>
 
 <style lang='css' scoped>
+#watch-later-list {
+    color: lightsalmon;
+    background-color: black;
+}
 
 </style>

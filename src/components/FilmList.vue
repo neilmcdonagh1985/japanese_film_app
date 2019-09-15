@@ -1,7 +1,7 @@
 <template lang='html'>
   <div id="film-list">
     <ul style="list-style: none;">
-      <film-item v-for='(film, index) in films' :film='film' :key='index'></film-item>
+      <film-item v-for='film in films' :film='film' :key='film.id'></film-item>
     </ul>
 
   </div>
@@ -25,7 +25,9 @@ export default {
 
 <style lang='css' scoped>
 #film-list {
+    background-color: black;
     width: 40%;
+    color: lightsalmon;
 }
 
 

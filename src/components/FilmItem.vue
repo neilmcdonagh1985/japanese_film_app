@@ -2,7 +2,7 @@
   <div id="film-item">
   <li>{{film.title}}</li>
   <button v-on:click='displayInfo'>Details</button>
-  <button v-if='' v-on:click='addToWatchLater'>add to watch later</button>
+  <button v-on:click='addToWatchLater'>add to watch later</button>
   </div>
   
 </template>
@@ -29,8 +29,21 @@ export default {
 </script>
 
 <style lang='css' scoped>
-#film-item{
-    display: flex;
+
+  #film-item{
+    padding: 10px;
+}
+
+li {
+    font-family: -apple-system, BlinkMacSystemFont, 
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+  'Open Sans', helvetica Neue, sans-serif;
+  font-weight: bold; 
+}
+
+button {
+    margin: 10px;
+    border: 2px solid lightsalmon;
 }
 
 </style>
