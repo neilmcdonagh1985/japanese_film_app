@@ -2,7 +2,7 @@
   <div id="watch-later-list">
     <ul style="list-style: none;">
       <watch-later-listitem v-for='filmToWatchLater in filmsToWatchLater' 
-        :filmToWatchLater='filmToWatchLater'
+        :filmToWatchLater='filmToWatchLater' :filmsToWatchLater='filmsToWatchLater'
         :key='filmToWatchLater.id'
         ></watch-later-listitem>
     </ul>

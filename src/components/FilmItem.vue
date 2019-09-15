@@ -51,7 +51,8 @@ li {
 }
 
 .favourite {
-    border: 2px solid aquamarine
+    border: 2px solid aquamarine;
+    border-radius: 25px;
 }
 
 button {

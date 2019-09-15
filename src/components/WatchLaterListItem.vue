@@ -11,7 +11,7 @@ import { eventBus } from '../main.js'
 
 export default {
     name: 'watch-later-listitem',
-    props: ['filmToWatchLater'],
+    props: ['filmToWatchLater', 'filmsToWatchLater'],
     methods: {
         removeFromWatchList: function(){
             eventBus.$emit('item-removed', this.film);
