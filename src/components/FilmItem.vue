@@ -3,7 +3,8 @@
   <li :class="{'favourite': favourites.includes(film)}">{{film.title}}</li>
   <button v-on:click='displayInfo'>Details</button>
   <button v-on:click='addToWatchLater'>add to watch later</button>
-  <button v-on:click='markAsFavourite'>Favourite</button>
+  <button v-on:click='markAsFavourite'>add to favourites</button>
+  <button v-on:click="removeFavourite">remove from favourites</button>
   </div>
   
 </template>
@@ -26,6 +27,9 @@ export default {
         },
         markAsFavourite(){
             eventBus.$emit('favourite-selected', this.film);
+        },
+        removeFavourite(){
+            eventBus.$emit('favourite-removed', this.film);
         }
     }
 

@@ -41,6 +41,10 @@ export default {
     isOnWatchLaterList: function(film){
       const idsOfWatchLaterList = (this.filmsToWatchLater.map(filmToWatchLater => filmToWatchLater.id))
       return idsOfWatchLaterList.includes(film.id)
+    },
+    unmarkFavourite: function(film){
+      const index = this.favourites.indexOf(film);
+      this.favourites.splice(index, 1)
     }
   },
   mounted(){
@@ -52,6 +56,7 @@ export default {
     eventBus.$on('film-to-watch-later', film => this.markToWatch(film));
     eventBus.$on('item-removed', film => this.unmarkToWatch(film));
     eventBus.$on('favourite-selected', film => this.favourites.push(film));
+    eventBus.$on('favourite-removed', film => this.unmarkFavourite(film));
   },
   components: {
     "film-list": FilmList,
