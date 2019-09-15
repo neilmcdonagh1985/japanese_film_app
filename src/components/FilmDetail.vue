@@ -21,7 +21,7 @@ export default {
 
 <style lang='css' scoped>
 #film-details-container {
-    width: 50%;
+    width: 25%;
 }
 
 </style>

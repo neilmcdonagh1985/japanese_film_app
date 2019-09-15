@@ -1,6 +1,6 @@
 <template lang='html'>
   <div id="film-list">
-    <ul>
+    <ul style="list-style: none;">
       <film-item v-for='(film, index) in films' :film='film' :key='index'></film-item>
     </ul>
 
@@ -24,5 +24,9 @@ export default {
 </script>
 
 <style lang='css' scoped>
+#film-list {
+    width: 40%;
+}
+
 
 </style>

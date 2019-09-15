@@ -29,5 +29,8 @@ export default {
 </script>
 
 <style lang='css' scoped>
+#film-item{
+    display: flex;
+}
 
 </style>
